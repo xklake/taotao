@@ -66,6 +66,7 @@ class Application extends \yii\web\Application
 	
 	public  function __destruct()
 	{
+		echo('quit....'); 
 	}
 	
 	public function init()
