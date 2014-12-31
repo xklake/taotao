@@ -7,9 +7,7 @@ use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 
 /* @var $this \yii\web\View */
-/* @var $content string
-
-add comments */
+/* @var $content string */
 
 AppAsset::register($this);
 ?>

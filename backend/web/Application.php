@@ -64,11 +64,6 @@ class Application extends \yii\web\Application
 		static::$add --;
 	}	
 	
-	public  function __destruct()
-	{
-		echo('quit....'); 
-	}
-	
 	public function init()
 	{
 		parent::init();

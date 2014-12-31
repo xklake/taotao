@@ -11,8 +11,9 @@ class m141231_111233_blog_rss extends Migration
     			'{{%blog_rss}}',
     			[
     					'userid' => Schema::TYPE_PK,
-    					'subscribetime' => Schema::TYPE_INTEGER . ' NOT NULL',
-    					'hasscubscribed' => Schema::TYPE_BOOLEAN . ' NOT NULL'
+    					'hasscubscribed' => Schema::TYPE_BOOLEAN . ' NOT NULL', 
+    					'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
+    					'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
     			],
     			$tableOptions = ''
     	);
@@ -22,16 +23,11 @@ class m141231_111233_blog_rss extends Migration
     	
     	// Foreign Keys
     	$this->addForeignKey('FK_userId', '{{%blog_rss}}', 'userid', '{{%user}}', 'id', 'CASCADE', 'CASCADE');
-
     	
-    	$this->insert('{{%blog_rss%}}', ['userid'=>2, 'subscribetime'=>1418005741,'hasscubscribed'=>1] ); 
-    	$this->insert('{{%blog_rss%}}', ['userid'=>3, 'subscribetime'=>1418005741,'hasscubscribed'=>1] ); 
+    	$this->insert('{{%blog_rss%}}', ['userid'=>2, 'hasscubscribed'=>1, 'created_at'=>1418005741, 'updated_at'=>1418005741]); 
+    	$this->insert('{{%blog_rss%}}', ['userid'=>3, 'hasscubscribed'=>1, 'created_at'=>1418005741, 'updated_at'=>1418005741]);
     	
-    	/** $sql = $queryBuilder->insert('user', [
-    			*  'name' => 'Sam',
-    			*  'age' => 30,
-    			* ], $params);
-    	* ~~~ */
+    	return true;  
     	
     }
 

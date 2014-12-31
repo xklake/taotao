@@ -321,5 +321,8 @@ return [
   'yii\widgets\PjaxAsset' => YII2_PATH . '/widgets/PjaxAsset.php',
   'yii\widgets\Spaceless' => YII2_PATH . '/widgets/Spaceless.php',
 	
-		'yii\backend\web\Application'=> YII_BACKEND. '/web/Application.php',
+  'yii\backend\web\Application'=> YII_BACKEND. '/web/Application.php',
+
+  'common\models\ActiveRecord'=> YII_COMMON. '/models/ActiveRecord.php',
+  'common\controller\Controller'=> YII_COMMON. '/controllers/Controller.php',
 ];
