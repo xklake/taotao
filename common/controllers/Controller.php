@@ -13,7 +13,6 @@ class Controller extends \yii\web\Controller
 
 	public function init()
 	{
-		echo(' self defined init');
 		parent::init();
 	}
 

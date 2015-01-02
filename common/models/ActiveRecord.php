@@ -28,7 +28,6 @@ class ActiveRecord extends \yii\db\ActiveRecord
 
 	public function init()
 	{
-		echo(' self defined init'); 
 		parent::init();
 	}
 	
