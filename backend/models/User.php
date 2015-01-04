@@ -74,7 +74,7 @@ class User extends \common\models\User
     	$prentrules = parent::rules();
     	
     	//merge new rules
-  		return array_merge($parentrules, [
+  		return array_merge($prentrules, [
             [['username', 'email'], 'required'],
             [['password', 'repassword'], 'required', 'on' => ['admin-create']],
             [['username', 'email', 'password', 'repassword'], 'trim'],

@@ -42,34 +42,25 @@ class UserSearch extends User
     public function search($params)
     {
         $query = User::find();
-
-        if(Yii::$app->user->identity->company_id > 1)
-            $query->where(['company_id' => Yii::$app->user->identity->company_id]);
-        
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
-
         if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
-
         $query->andFilterWhere([
             'id' => $this->id,
-            'company_id' => $this->company_id,
             'role' => $this->role,
             'status' => $this->status,
             //'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);
-
         $query->andFilterWhere(['like', 'username', $this->username])
             ->andFilterWhere(['like', 'auth_key', $this->auth_key])
             ->andFilterWhere(['like', 'password_hash', $this->password_hash])
             ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
             ->andFilterWhere(['like', 'email', $this->email])
             ->andFilterWhere(['>', 'created_at', strtotime($this->created_at)]);
-
         return $dataProvider;
     }
 }
